@@ -10,7 +10,6 @@ function App() {
     
       <div style={{
         height:"500px",
-        boxShadow:"0 0 2px black"
       }} className="flex flex-col md:flex-row w-full h-full max-w-5xl overflow-hidden bg-white rounded-lg ">
         
        
