@@ -64,9 +64,36 @@ function App() {
 
 export default App;
 
+const style = {
+  fontSize:"max(13px, 1vw)"
+}
+
 const dateRenderer = ({ days, hours, minutes, seconds})=>{
-  return  <span 
-  style={{
-  fontSize:"max(4vw, 30px)"
-  }}>{days}D:{hours}H:{minutes}M:{seconds}S</span>
+  return  <div className="countdown">
+    <div>
+      <span>{days}</span>
+      <span style={style} >{days===1?"Day":"Days"}</span>
+    </div>
+    <div>
+      :
+    </div>
+    <div>
+      <span>{hours}</span>
+      <span style={style} >{hours===1?"Hour":"Hours"}</span>
+    </div>
+    <div>
+      :
+    </div>
+    <div>
+      <span>{minutes}</span>
+      <span style={style} >{minutes===1?"Minute":"Minutes"}</span>
+    </div>
+    <div>
+      :
+    </div>
+    <div>
+      <span>{seconds}</span>
+      <span style={style} >{seconds===1?"Second":"Seconds"}</span>
+    </div>
+  </div>
 }
