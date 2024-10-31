@@ -1,10 +1,11 @@
 import React from "react";
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
-
+import Countdown from 'react-countdown';
 import Image from './assets/img1.png'; 
 import logo from './assets/logo.svg'; 
 
 function App() {
+  const date = new Date(2025, 1, 1)
   return (
     <div className="flex items-center justify-center min-h-screen p-4 bg-gray-100">
     
@@ -32,9 +33,15 @@ function App() {
           
         
           <div className="flex items-center mt-8 space-x-2">
-            <span className="w-3 h-3 bg-orange-500 rounded-full"></span>
+            {/*<span className="w-3 h-3 bg-orange-500 rounded-full"></span>
             <span className="w-3 h-3 bg-gray-300 rounded-full"></span>
-            <span className="w-3 h-3 bg-gray-300 rounded-full"></span>
+            <span className="w-3 h-3 bg-gray-300 rounded-full"></span>*/}
+           <span 
+           style={{
+           fontSize:"max(4vw, 30px)"
+           }}>
+           <Countdown  date={date} renderer={dateRenderer} />
+           </span>
           </div>
 
          
@@ -59,3 +66,7 @@ function App() {
 }
 
 export default App;
+
+const dateRenderer = ({ days, hours, minutes, seconds})=>{
+  return <span>{days}D:{hours}H:{minutes}M:{seconds}S</span>
+}
